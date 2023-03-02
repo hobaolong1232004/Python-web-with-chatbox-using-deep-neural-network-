@@ -11,7 +11,6 @@ def get_index():
 @app.post("/predict")
 def predict():
     text=request.get_json().get("message")
-    # TODO: check if text is valid
     response=chat(text)
     message={"answer":response}
     return jsonify(message)
